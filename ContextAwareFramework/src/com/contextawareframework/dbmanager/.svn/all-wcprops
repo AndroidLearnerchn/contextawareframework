@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/ANDROID/!svn/ver/60/AndroidLibraryProject/src/com/contextawareframework/dbmanager
+END
+ProximityDbHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/ANDROID/!svn/ver/64/AndroidLibraryProject/src/com/contextawareframework/dbmanager/ProximityDbHelper.java
+END
+AccelerometerDbHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/ANDROID/!svn/ver/64/AndroidLibraryProject/src/com/contextawareframework/dbmanager/AccelerometerDbHelper.java
+END
+ContextAwareSQLiteHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/ANDROID/!svn/ver/64/AndroidLibraryProject/src/com/contextawareframework/dbmanager/ContextAwareSQLiteHelper.java
+END
+BatteryDbHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/dbmanager/BatteryDbHelper.java
+END
+LocationDbHelperold.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/dbmanager/LocationDbHelperold.java
+END
+UserInfoDbHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/ANDROID/!svn/ver/64/AndroidLibraryProject/src/com/contextawareframework/dbmanager/UserInfoDbHelper.java
+END
+LightDbHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/ANDROID/!svn/ver/64/AndroidLibraryProject/src/com/contextawareframework/dbmanager/LightDbHelper.java
+END
+LocationDbHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/ANDROID/!svn/ver/64/AndroidLibraryProject/src/com/contextawareframework/dbmanager/LocationDbHelper.java
+END
+GyroscopeDbHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/ANDROID/!svn/ver/64/AndroidLibraryProject/src/com/contextawareframework/dbmanager/GyroscopeDbHelper.java
+END

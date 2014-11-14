@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/sensorlistener
+END
+SensorListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/sensorlistener/SensorListener.java
+END
+LightListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/sensorlistener/LightListener.java
+END
+LocationListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/sensorlistener/LocationListener.java
+END
+AccelerometerListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/sensorlistener/AccelerometerListener.java
+END
+ProximityListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/sensorlistener/ProximityListener.java
+END
+BatteryListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/sensorlistener/BatteryListener.java
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/ANDROID/!svn/ver/61/AndroidLibraryProject/src/com/contextawareframework/os
+END
+CAFPowerManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/ANDROID/!svn/ver/64/AndroidLibraryProject/src/com/contextawareframework/os/CAFPowerManager.java
+END
+Battery.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/os/Battery.java
+END
+UserInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/os/UserInfo.java
+END
+Telephony.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/os/Telephony.java
+END

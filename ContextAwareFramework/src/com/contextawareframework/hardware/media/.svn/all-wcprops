@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/hardware/media
+END
+Bluetooth.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/hardware/media/Bluetooth.java
+END
+NFC.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/hardware/media/NFC.java
+END
+Microphone.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/hardware/media/Microphone.java
+END
+Camera.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/hardware/media/Camera.java
+END
+Wifi.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/hardware/media/Wifi.java
+END
+USB.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/hardware/media/USB.java
+END
+SDCard.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/hardware/media/SDCard.java
+END

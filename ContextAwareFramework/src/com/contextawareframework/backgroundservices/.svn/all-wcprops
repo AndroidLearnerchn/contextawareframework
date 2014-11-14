@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/ANDROID/!svn/ver/63/AndroidLibraryProject/src/com/contextawareframework/backgroundservices
+END
+BatteryDataService.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/backgroundservices/BatteryDataService.java
+END
+GPSTracker.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/backgroundservices/GPSTracker.java
+END
+ProximityDataListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/ANDROID/!svn/ver/64/AndroidLibraryProject/src/com/contextawareframework/backgroundservices/ProximityDataListener.java
+END
+AccelerometerDataListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/ANDROID/!svn/ver/64/AndroidLibraryProject/src/com/contextawareframework/backgroundservices/AccelerometerDataListener.java
+END
+CAFService.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/backgroundservices/CAFService.java
+END
+SoundRecorder.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/backgroundservices/SoundRecorder.java
+END
+Text2Speech.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/ANDROID/!svn/ver/64/AndroidLibraryProject/src/com/contextawareframework/backgroundservices/Text2Speech.java
+END
+LightDataListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/ANDROID/!svn/ver/64/AndroidLibraryProject/src/com/contextawareframework/backgroundservices/LightDataListener.java
+END
+ServiceReceiver.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/ANDROID/!svn/ver/63/AndroidLibraryProject/src/com/contextawareframework/backgroundservices/ServiceReceiver.java
+END
+GPSTracker1.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/backgroundservices/GPSTracker1.java
+END
+GyroscopeDataListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/ANDROID/!svn/ver/64/AndroidLibraryProject/src/com/contextawareframework/backgroundservices/GyroscopeDataListener.java
+END
+LocationDataListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/ANDROID/!svn/ver/64/AndroidLibraryProject/src/com/contextawareframework/backgroundservices/LocationDataListener.java
+END
+BluetoothListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/backgroundservices/BluetoothListener.java
+END

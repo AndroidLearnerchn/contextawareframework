@@ -1,0 +1,51 @@
+package com.contextawareframework.backgroundservices;
+import android.telephony.TelephonyManager;
+import android.util.Log;
+import android.content.BroadcastReceiver;
+import android.content.Intent;
+import android.media.AudioManager;
+import android.content.Context;
+/*
+ * This class is used to turn the mode from silent to ringing mode 
+ * when a caller calls for more than two times 
+ */
+public class ServiceReceiver extends BroadcastReceiver{
+	private static int num=0;
+	/**
+	 * Method to turn on ringing mode from silent mode when a caller calls 
+	 * for more than two times and return to silent mode on hang up
+	 */
+	@Override
+	public void onReceive(Context context,Intent intent){
+		
+		try{
+			//To retrieve audio service
+			AudioManager audio=(AudioManager)context.getSystemService(Context.AUDIO_SERVICE);
+			//this code executed executed when there is an incoming call
+			if(intent.getStringExtra(TelephonyManager.EXTRA_STATE).equals(TelephonyManager.EXTRA_STATE_RINGING))
+			{
+			num=num+1;
+			Log.d("ttsObj","after TextToSpeech initialisation");
+				
+			//if user calls more than to two times, silent mode is overriden 
+				if(num >4){
+										
+				
+					int max=audio.getStreamMaxVolume(AudioManager.STREAM_RING);
+					audio.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
+					audio.setStreamVolume(AudioManager.STREAM_RING,max,AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE);
+				}
+			
+			}
+			else if(intent.getStringExtra(TelephonyManager.EXTRA_STATE).equals(TelephonyManager.EXTRA_STATE_IDLE)||intent.getStringExtra(TelephonyManager.EXTRA_STATE).equals(TelephonyManager.EXTRA_STATE_OFFHOOK)){
+			//call is disconnected
+			audio.setRingerMode(AudioManager.RINGER_MODE_SILENT);
+			
+			}
+			
+		}
+			catch(Exception e){	e.printStackTrace();}
+	}		
+		
+}
+	

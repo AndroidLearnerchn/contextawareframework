@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_world" />
+
+    <CheckBox
+        android:id="@+id/chkBoxProximity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="35dp"
+        android:text="Proximty"
+        android:textSize="25sp" />
+
+    <CheckBox
+        android:id="@+id/chkBoxAccelerometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/chkBoxProximity"
+        android:layout_below="@+id/chkBoxProximity"
+        android:layout_marginTop="30dp"
+        android:text="Accelerometer"
+        android:textSize="25sp" />
+
+    <CheckBox
+        android:id="@+id/chkBoxLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/chkBoxAccelerometer"
+        android:layout_below="@+id/chkBoxAccelerometer"
+        android:layout_marginTop="30dp"
+        android:text="Light"
+        android:textSize="25sp" />
+
+    <CheckBox
+        android:id="@+id/chkBoxGyro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chkBoxLight"
+        android:layout_alignLeft="@+id/chkBoxAccelerometer"
+        android:layout_marginTop="30dp"
+        android:text="Gyrometer"
+        android:textSize="25sp" />
+    <CheckBox
+        android:id="@+id/chkBoxGPS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chkBoxGyro"
+        android:layout_alignLeft="@+id/chkBoxAccelerometer"
+        android:layout_marginTop="30dp"
+        android:text="GPS"
+        android:textSize="25sp" />
+    <CheckBox
+        android:id="@+id/chkBoxMagnetometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chkBoxGPS"
+        android:layout_alignLeft="@+id/chkBoxAccelerometer"
+        android:layout_marginTop="30dp"
+        android:text="Magnetometer"
+        android:textSize="25sp" />
+
+</RelativeLayout>

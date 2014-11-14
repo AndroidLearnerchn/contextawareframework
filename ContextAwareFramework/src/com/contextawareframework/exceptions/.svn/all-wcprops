@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/exceptions
+END
+LightSensorException.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/exceptions/LightSensorException.java
+END
+SDCardException.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/exceptions/SDCardException.java
+END
+GPSSensorException.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/exceptions/GPSSensorException.java
+END
+UserDefined_Exception_Example.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/exceptions/UserDefined_Exception_Example.java
+END
+CAFException.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/exceptions/CAFException.java
+END
+AccelerometerSensorException.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/exceptions/AccelerometerSensorException.java
+END
+ProximitySensorException.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/exceptions/ProximitySensorException.java
+END
+BluetoothConnectionException.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/exceptions/BluetoothConnectionException.java
+END
+SQLiteQueryException.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/exceptions/SQLiteQueryException.java
+END
+WifiConnectivityException.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/exceptions/WifiConnectivityException.java
+END
+BatteryException.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/exceptions/BatteryException.java
+END

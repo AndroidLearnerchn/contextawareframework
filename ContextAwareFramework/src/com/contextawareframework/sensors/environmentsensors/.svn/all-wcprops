@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/sensors/environmentsensors
+END
+Temparature.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/sensors/environmentsensors/Temparature.java
+END
+Light.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/ANDROID/!svn/ver/64/AndroidLibraryProject/src/com/contextawareframework/sensors/environmentsensors/Light.java
+END
+Pressure.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/sensors/environmentsensors/Pressure.java
+END
+Humidity.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/ANDROID/!svn/ver/52/AndroidLibraryProject/src/com/contextawareframework/sensors/environmentsensors/Humidity.java
+END
