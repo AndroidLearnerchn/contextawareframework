@@ -138,6 +138,8 @@ public class MagnetometerDataListener extends CAFService {
 				if(mMagnetometer!=null)
 				{
 					mSensorManager.registerListener(listener, mMagnetometer , sampleRate);
+					Log.d(TAG,"Magnetometer Sensor Found");
+					
 				}
 				else
 				{

@@ -121,20 +121,29 @@ public class LightDataListener  extends CAFService{
 		{
 			if(enableDebugging)
 			{
-				Log.d(TAG,"Light Sensor not found");
-				Toast.makeText(this,"No Light Sensor found! quit-",Toast.LENGTH_SHORT).show();
+				Log.d(TAG,"Sensor service not found");
+				//Toast.makeText(this,"Sensor service found! quit-",Toast.LENGTH_SHORT).show();
 			}
 		}
 		else
 		{
 			if(enableDebugging)
 			{
-				Log.d(TAG,"Light Sensor Found");
-				Toast.makeText(mContext,"Light Sensor found",Toast.LENGTH_LONG).show();
+				Log.d(TAG,"Sensor service Found");
+				//Toast.makeText(mContext,"Sensor servie found",Toast.LENGTH_LONG).show();
 			}
 			try{
 				mLight = mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
-				mSensorManager.registerListener(listener, mLight , sampleRate);
+				if(mLight!=null)
+				{
+					Log.d(TAG,"Light Sensor Found, registering");
+					mSensorManager.registerListener(listener, mLight , sampleRate);
+				}
+				else
+				{
+					Log.d(TAG,"Light Sensor not Found");
+				}
+				
 			}
 			catch(Exception e)
 			{

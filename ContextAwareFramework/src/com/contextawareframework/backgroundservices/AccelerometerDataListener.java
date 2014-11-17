@@ -126,21 +126,32 @@ public class AccelerometerDataListener extends CAFService {
 		{
 			if(enableDebugging)
 			{
-				Log.d(TAG,"Accelerometer Sensor Found");
-				Toast.makeText(this,"No Accelerometer Sensor found! quit-",Toast.LENGTH_SHORT).show();
+				Log.d(TAG,"Sensor Service not Available");
+				//Toast.makeText(this,"No Sensor Service found! quit-",Toast.LENGTH_SHORT).show();
 			}
 		}
 		else
 		{
 			if(enableDebugging)
 			{
-				Log.d(TAG,"Accelerometer Sensor Found, else part");
-				Toast.makeText(mContext,"Accelerometer Sensor found",Toast.LENGTH_SHORT).show();
+				Log.d(TAG,"Sensor service available");
+				//Toast.makeText(mContext,"Sensor service found",Toast.LENGTH_SHORT).show();
 			}
 			try
 			{
 				mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-				mSensorManager.registerListener(listener, mAccelerometer , sampleRate);
+				if(mAccelerometer!=null)
+				{
+					if(enableDebugging)
+					{
+						Log.d(TAG,"Accelerometer Sensor available, registering");
+					}
+					mSensorManager.registerListener(listener, mAccelerometer , sampleRate);
+				}
+				else
+				{
+					Log.d(TAG,"Accelerometer Sensor not available");
+				}
 			}
 			catch(Exception e)
 			{

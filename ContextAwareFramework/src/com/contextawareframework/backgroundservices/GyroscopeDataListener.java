@@ -124,21 +124,33 @@ public class GyroscopeDataListener extends CAFService {
 		{
 			if(enableDebugging)
 			{
-				Log.d(TAG,"Gyroscope Sensor Found");
-				Toast.makeText(this,"No Gyroscope Sensor found! quit-",Toast.LENGTH_SHORT).show();
+				Log.d(TAG,"No Sensor Service available");
+				//Toast.makeText(this,"No Sensor Service found! quit-",Toast.LENGTH_SHORT).show();
 			}
 		}
 		else
 		{
 			if(enableDebugging)
 			{
-				Log.d(TAG,"Gyroscope Sensor Found, else part");
-				Toast.makeText(mContext,"Gyroscope Sensor found",Toast.LENGTH_SHORT).show();
+				Log.d(TAG,"Sensor Service Found, else part");
+				//Toast.makeText(mContext,"Sensor Service found",Toast.LENGTH_SHORT).show();
 			}
 			try
 			{
 				mGyroscope = mSensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
-				mSensorManager.registerListener(listener, mGyroscope , sampleRate);
+				if(mGyroscope!=null)
+					{
+						mSensorManager.registerListener(listener, mGyroscope , sampleRate);
+						if(enableDebugging)
+						{
+							Log.d(TAG,"Gyroscope Sensor Found, registering service");
+							//Toast.makeText(mContext,"Sensor Service found",Toast.LENGTH_SHORT).show();
+						}
+					}
+				else
+				{
+					Log.d(TAG,"Gyroscope Sensor not available");
+				}
 			}
 			catch(Exception e)
 			{
@@ -148,14 +160,17 @@ public class GyroscopeDataListener extends CAFService {
 	}
 
 	/**
-	 * Method to enable disable Gyroscope Sensor in Android
+	 * Method to disable Gyroscope Sensor in Android
 	 */
 	public void disableGyroscopeListener(SensorEventListener listenerFromActivity)
 	{	
 		try
 		{
 			if(listenerFromActivity!=null)
-				mSensorManager.unregisterListener(listenerFromActivity);
+			{	mSensorManager.unregisterListener(listenerFromActivity);
+				//if(enableDebugging)
+					//Log.d(TAG,"unregistering Gyroscope Sensor");
+			}
 			else
 			{
 				if(enableDebugging)

@@ -99,7 +99,7 @@ public class LocationDataListener extends CAFService{
 	}
 	public void disableLocationListener(LocationListener listenerFromActivity)
 	{
-		stopUsingGPS(listenerFromActivity);
+		unregisterLocationListener(listenerFromActivity);
 	}
 	/**
 	 * @author Rekha N
@@ -178,10 +178,10 @@ public class LocationDataListener extends CAFService{
 	}
 	
 	/**
-	 * Stop using GPS listener
+	 * Stop using Location listener
 	 * Calling this function will stop using GPS in your app
 	 * */
-	public void stopUsingGPS(LocationListener locationListener){
+	public void unregisterLocationListener(LocationListener locationListener){
 		if(locationManager != null){
 			locationManager.removeUpdates(locationListener);
 		}		

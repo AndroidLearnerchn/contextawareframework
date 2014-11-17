@@ -119,22 +119,31 @@ public class ProximityDataListener extends CAFService {
 		{
 			if(enableDebugging)
 			{
-				Log.d(TAG, "Proximity Sensor not found");
-				Toast.makeText(this, "No Proximity Sensor found! quit-",Toast.LENGTH_SHORT).show();
+				Log.d(TAG, "Sensor service not found");
+				//Toast.makeText(this, "Sensor service not found! quit-",Toast.LENGTH_SHORT).show();
 			}
 		} 
 		else 
 		{
 			if(enableDebugging)
 			{
-				Log.d(TAG, "Proximity Sensor Found");
-				Toast.makeText(mContext, "Proximity Sensor found",Toast.LENGTH_SHORT).show();
+				Log.d(TAG, "Sensor service Found");
+				Toast.makeText(mContext, "Sensor service found",Toast.LENGTH_SHORT).show();
 			}
 
 			try 
 			{
 				mProximity = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
-				mSensorManager.registerListener(listener, mProximity,sampleRate);
+				if(mProximity!=null)
+				{
+					mSensorManager.registerListener(listener, mProximity,sampleRate);
+					Log.d(TAG,"Proximity Sensor Found");
+				}
+				else
+				{
+					Log.d(TAG,"Proximity Sensor not found");
+				}
+				
 			}
 			catch (Exception e) 
 			{
