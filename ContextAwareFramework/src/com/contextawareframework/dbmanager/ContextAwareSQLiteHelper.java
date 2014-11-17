@@ -36,7 +36,7 @@ import android.util.Log;
 public class ContextAwareSQLiteHelper extends SQLiteOpenHelper {
 
 	// Database name for all sensor (context data) data 
-	private static final String DATABASE_NAME = "contextAwareFramework.db";
+	private static final String DATABASE_NAME = "contextawareframework.db";
 	private static final int DATABASE_VERSION = 1;
 	private static final String TAG = "ContextAwareSQLiteHelper";
 
@@ -56,7 +56,7 @@ public class ContextAwareSQLiteHelper extends SQLiteOpenHelper {
 	public static final String COLUMN_USER_AUTH_STATUS = "false"; // To check if its true then user can query the server
 	//---------------------------------------------------------------------------------------------------------//
 
-	//-------------------------------------Table for Gyroscope-------------------------------------------------//
+	//-------------------------------------Table for Magnetometer-------------------------------------------------//
 	// Tabel Name
 	public static final String TABLE_MAGNETOMETER = "magnetometer";
 

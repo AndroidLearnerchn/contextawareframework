@@ -63,7 +63,7 @@ public class SensorController {
 	private Context contextFromActivity;
 	
 	/* GPSTracker Class reference variable */
-	private LocationDataListener gps;
+	//private LocationDataListener gps;
 	
 	/* AccelerometerDataListener Class reference variable */
 	private AccelerometerDataListener accel;
@@ -356,18 +356,18 @@ public class SensorController {
 	}
 	
 	/**
-	 * To un-register the Gyroscope 
+	 * To un-register the Magnetometer 
 	 */
 	public final void unregisterMagnetometerService(SensorEventListener listenerfromMainApp) throws MagnetometerSensorException
 	{		
 		if(listenerfromMainApp!=null)
 		{	
-			if(gyroscope!=null)
+			if(magnetometer!=null)
 			{
-				gyroscope.disableGyroscopeListener(listenerfromMainApp);
-				CAFConfig.setSensorGyroscope(false);
+				magnetometer.disableMagnetometerListener(listenerfromMainApp);
+				CAFConfig.setSensorMagnetometer(false);
 				if(enableDebugging)
-					Log.d(TAG,"Unregister Gyroscope Sensor");
+					Log.d(TAG,"Unregister Magnetometer Sensor");
 			}
 		}
 		else
@@ -473,16 +473,16 @@ public class SensorController {
 	 */
 	public final void unregisterLocationService(LocationListener locationListener) throws LocationServiceException
 	{
-		if(gps!=null)
+		if(locationDataListener!=null)
 		{	
 			if(enableDebugging)
 				Log.d(TAG,"Unregister Location Service");
-			gps.stopUsingGPS(locationListener); // Change the Listener 
+			locationDataListener.unregisterLocationListener(locationListener); // Change the Listener 
 			CAFConfig.setSensorLocation(false);
 		}
 		else
 		{
-			Log.d(TAG,"gps is null");
+			Log.d(TAG,"locationDataListener is null");
 		}
 		
 	}

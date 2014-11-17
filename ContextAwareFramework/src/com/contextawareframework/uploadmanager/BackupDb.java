@@ -21,8 +21,8 @@ import android.os.Environment;
 public class BackupDb{
 	private Context localContext;
 	private String pkgName;
-	private File backupLocation ;
-	private String fileName ;
+	private File backupLocation;
+	private String fileName;
 	// Constructor
 	// If user wants to specify the Backup location then here we can initialize 
 	public BackupDb(Context contextFromMain,String ApplicationPkgName)
@@ -40,7 +40,7 @@ public class BackupDb{
 	}
 	/*
 	 * Method to copy the database file to SD card
-	 * */
+	 */
 public void backupDb()
 {
 try {

@@ -124,7 +124,7 @@ public class  LocationDbHelper{
 	 * @param placeInfo Information about the place 
 	 * @return newLocationRow LocationPojo Class object with lat, long, time, place and placeinfo
 	 */
-	public LocationPojo createLocationRowData(String timestamp,String latitude, String longitude, String place, String placeInfo)
+	public LocationPojo createLocationRowData(long timestamp,Float latitude, Float longitude, String place, String placeInfo)
 	{
 		ContentValues values = new ContentValues();
 		values.put(ContextAwareSQLiteHelper.COLUMN_LOCATION_TIMESTAMP, timestamp);

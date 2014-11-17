@@ -30,6 +30,7 @@ import com.contextawareframework.dbmanager.ContextAwareSQLiteHelper;
 import com.contextawareframework.globalvariable.CAFConfig;
 
 import android.content.Context;
+import android.content.Loader.ForceLoadContentObserver;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
@@ -48,7 +49,7 @@ public class CsvFileWriter {
 	public static int curRowCount;
 
 	// To store the last row count in an application life cycle.
-	public static int prevRowCount;
+	public static int prevRowCount=0;
 	
 	/* Cursor to a row */
 	public static Cursor curCSV;
@@ -160,7 +161,7 @@ public class CsvFileWriter {
 				// To see the debugging message 
 				if(enableDebugging)
 				{
-					Log.d(TAG, " file exist, deleting file");
+					Log.d(TAG, " file exist, deleting file : "+ fileName);
 				}
 
 				// Create the new file again
@@ -169,7 +170,7 @@ public class CsvFileWriter {
 				// To see the debugging message
 				if(enableDebugging)
 				{
-					Log.d(TAG, " "+"new file created : " );
+					Log.d(TAG, " "+"new file created : "+ fileName );
 				}
 
 
@@ -220,6 +221,7 @@ public class CsvFileWriter {
 		try
 		{ 
 			// Need to be written in synchronized block to stop editing the same csv file from any other thread 
+			
 			synchronized(this) 
 			{
 				//Log.d("Debug",tableName);
@@ -230,26 +232,38 @@ public class CsvFileWriter {
 
 				// Query to get the newly inserted data in the table
 				String query = "select * from "+ tableName +" where id > " + prevRowCount;
-
+							
 				//To get the row count
-				String queryForgetCount = " select * from  " + tableName ;
-
+				String queryForGetPresentCount = " select * from  " + tableName ;
+				
 				// Execute the query 
-				Cursor getcolumnCount = database.rawQuery(queryForgetCount, null);
+				Cursor getrowCount = database.rawQuery(queryForGetPresentCount, null);
 
 				// Total number of rows in the selected table 
-				totalRowCount = getcolumnCount.getCount();
-
+				totalRowCount = getrowCount.getCount();
+				
+				// To check the current table name which is being queried for generating csv file., previous row count and present row count
+				if(enableDebugging)
+				{
+					Log.d(TAG,"Table Name : " + tableName);
+					Log.d(TAG,"Prev Row Count = " + prevRowCount);
+					Log.d(TAG,"Total Row Count = " + totalRowCount);
+				}
+				
+				
 				// Get the newly added rows in the table
 				curCSV = database.rawQuery(query,null);//new String [] {checkCondition});
 
 				curRowCount =  curCSV.getCount();
-				prevRowCount = prevRowCount + curRowCount;
+				if(prevRowCount!=0)
+					prevRowCount = prevRowCount + curRowCount;
+				else 
+					prevRowCount = 0;
 				//Log.d("Debug","CurRowCount = " + curRowCount+ "Total = " + totalRowCount);
 				
 				int i =0;
 				
-				int columnCount = curCSV.getColumnCount();
+				//int columnCount = curCSV.getColumnCount();
 				
 				while(curCSV.moveToNext())
 				{
@@ -260,7 +274,7 @@ public class CsvFileWriter {
 					}
 					else if(tableName.equals("location"))
 					{
-						data = dataToWrite(curCSV.getInt(0),curCSV.getLong(1),curCSV.getFloat(2),curCSV.getFloat(3),curCSV.getFloat(4),curCSV.getString(5));
+						data = dataToWrite(curCSV.getInt(0),curCSV.getLong(1),curCSV.getFloat(2),curCSV.getFloat(3),curCSV.getString(4),curCSV.getString(5));
 					}
 					else if(tableName.equals("light"))
 					{
@@ -271,6 +285,10 @@ public class CsvFileWriter {
 						data = dataToWrite(curCSV.getInt(0),curCSV.getLong(1),curCSV.getFloat(2),curCSV.getFloat(3));
 					}
 					else if(tableName.equals("gyroscope"))
+					{
+						data = dataToWrite(curCSV.getInt(0),curCSV.getLong(1),curCSV.getFloat(2),curCSV.getFloat(3),curCSV.getFloat(4));
+					}
+					else if(tableName.equals("magnetometer"))
 					{
 						data = dataToWrite(curCSV.getInt(0),curCSV.getLong(1),curCSV.getFloat(2),curCSV.getFloat(3),curCSV.getFloat(4));
 					}
