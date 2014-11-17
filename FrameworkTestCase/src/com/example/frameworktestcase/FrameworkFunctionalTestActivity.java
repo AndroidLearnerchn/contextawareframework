@@ -47,12 +47,15 @@ public class FrameworkFunctionalTestActivity extends Activity {
 	ContextAwareSQLiteHelper dbHelper;
 	
 	
+	
 	private CheckBox chkAccel, chkProximity, chkLight, chkGyro, chkGPS, chkMagnetometer;
 	SensorController controller;
 	ContextAwareFunction caFunction;
 	SensorEventListener accelSensorListener, proximitySensorListener, lightSensorListener, gyroSensorListener, magnetoSensorListener;
 	LocationListener gpsSensorListener;
-	CsvFileWriter fileWriter;
+	
+	CsvFileWriter accelFileWriter, proximityFileWriter, magnetoFileWriter, gyroFileWriter, lightFileWriter,locationFileWriter  ;
+	
 	private static final String TAG = "FrameworkFunctionalityTestCase";
 	
 	@Override
@@ -94,41 +97,7 @@ public class FrameworkFunctionalTestActivity extends Activity {
 		locationDbHelper.open();
 		magnetoDbHelper.open();
 		
-		// Take data on a file
-		fileWriter = new CsvFileWriter(this);
 		
-		//File path = new File;
-		FileWriter writer;
-    	try {
-			writer = fileWriter.createFile(null, null, "Accelerometer.csv");
-			fileWriter.getDataFromTable(ContextAwareSQLiteHelper.TABLE_ACCEL, writer);
-			writer.close();
-			
-			// For sensor Gyroscope
-			writer = fileWriter.createFile(null, null, "GyroMeter.csv");
-			
-			fileWriter.getDataFromTable(ContextAwareSQLiteHelper.TABLE_GYRO, writer);
-			writer.close();
-			// For Light Sensor
-			writer = fileWriter.createFile(null, null, "Light.csv");
-			fileWriter.getDataFromTable(ContextAwareSQLiteHelper.TABLE_LIGHT, writer);
-			writer.close();
-			// For Proximity Sensor
-			writer = fileWriter.createFile(null, null, "Proximity.csv");
-			fileWriter.getDataFromTable(ContextAwareSQLiteHelper.TABLE_PROXIMITY, writer);
-			writer.close();
-			// For Magnetometer Sensor
-			writer = fileWriter.createFile(null, null, "Magnetometer.csv");
-			fileWriter.getDataFromTable(ContextAwareSQLiteHelper.TABLE_MAGNETOMETER, writer);
-			writer.close();
-			// For Loaction Service
-			writer = fileWriter.createFile(null, null, "Location.csv");
-			fileWriter.getDataFromTable(ContextAwareSQLiteHelper.TABLE_LOCATION, writer);
-			writer.close();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
 		// Location Listener 
 		gpsSensorListener = new LocationListener(){
 
@@ -136,8 +105,16 @@ public class FrameworkFunctionalTestActivity extends Activity {
 			public void onLocationChanged(Location location) {
 				// TODO Auto-generated method stub
 			       Log.d(TAG,"Location Update");
-			       Log.d(TAG,""+location.getAltitude());
-			       Log.d(TAG,""+location.getLatitude());
+			       
+			       float lat= (float)location.getLatitude();
+			       float longitude = (float)location.getLongitude();
+			       Log.d(TAG,"Longitude : "+longitude);
+			       Log.d(TAG,"Latitude : "+ lat);
+			       String place = "Tidel Park";
+			       String placeInfo = "CDAC";			       
+			       timestamp = System.currentTimeMillis(); 
+			       locationDbHelper.createLocationRowData(timestamp, lat, longitude, place, placeInfo);
+			     
 			}
 
 			@Override
@@ -186,7 +163,7 @@ public class FrameworkFunctionalTestActivity extends Activity {
 					public void onSensorChanged(SensorEvent event) {
 						Log.d(TAG,"Magnetometer");
 						timestamp = System.currentTimeMillis();
-						magnetoDbHelper.setEnableDebugging(true);
+						//magnetoDbHelper.setEnableDebugging(true);
 						Log.d(TAG,"Values are :" + timestamp + "  "+event.values[0]+"  "+ event.values[1] +" " +event.values[2]);
 						magnetoDbHelper.createMagnetometerRowData(timestamp, event.values[0], event.values[1], event.values[2]);
 						
@@ -537,6 +514,61 @@ public class FrameworkFunctionalTestActivity extends Activity {
 			String d = fileWriter.dataToWrite(1,"Name","Again");
 			Log.d(TAG,"dataToWrite "+ d);*/
 			
+			/* To create the csv file at time of exist*/
+			
+			// Take data on a file
+			accelFileWriter = new CsvFileWriter(this);
+			gyroFileWriter = new CsvFileWriter(this);
+			magnetoFileWriter = new CsvFileWriter(this);
+			proximityFileWriter = new CsvFileWriter(this);
+			lightFileWriter = new CsvFileWriter(this);
+			locationFileWriter = new CsvFileWriter(this);
+			
+			//File path = new File;
+			FileWriter accelWriter,proximityWriter, lightWriter, gyroWriter, magnetoWriter, locationWriter;
+	    	try {
+	    		// For sensor Accelerometer
+	    		accelWriter = accelFileWriter.createFile(null, null, "Accelerometer.csv");
+				accelFileWriter.getDataFromTable(ContextAwareSQLiteHelper.TABLE_ACCEL, accelWriter);
+				accelWriter.close();
+				accelDbHelper.close();		
+				
+				// For sensor Gyroscope
+				gyroWriter = gyroFileWriter.createFile(null, null, "GyroMeter.csv");
+				gyroFileWriter.getDataFromTable(ContextAwareSQLiteHelper.TABLE_GYRO, gyroWriter);
+				gyroWriter.close();
+				gyroDbHelper.close();
+				
+				// For Light Sensor
+				lightWriter = lightFileWriter.createFile(null, null, "Light.csv");
+				lightFileWriter.getDataFromTable(ContextAwareSQLiteHelper.TABLE_LIGHT, lightWriter);
+				lightWriter.close();
+				lightDbHelper.close();
+				
+				// For Proximity Sensor
+				proximityWriter = proximityFileWriter.createFile(null, null, "Proximity.csv");
+				proximityFileWriter.getDataFromTable(ContextAwareSQLiteHelper.TABLE_PROXIMITY, proximityWriter);
+				proximityWriter.close();
+				proximityDbHelper.close();
+				
+				// For Magnetometer Sensor
+				magnetoWriter = magnetoFileWriter.createFile(null, null, "Magnetometer.csv");
+				magnetoFileWriter.getDataFromTable(ContextAwareSQLiteHelper.TABLE_MAGNETOMETER, magnetoWriter);
+				magnetoWriter.close();
+				magnetoDbHelper.close();
+				
+				// For Loaction Service
+				locationWriter = locationFileWriter.createFile(null, null, "Location.csv");
+				locationFileWriter.getDataFromTable(ContextAwareSQLiteHelper.TABLE_LOCATION, locationWriter);
+				locationWriter.close();
+				locationDbHelper.close();
+				
+			} 
+	    	catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			 /* Till here */
 			if(controller!=null)
 			{
 				if(accelSensorListener!=null)
@@ -549,7 +581,8 @@ public class FrameworkFunctionalTestActivity extends Activity {
 					controller.unregisterLightService(gyroSensorListener);
 				if(gpsSensorListener!=null)
 					controller.unregisterLocationService(gpsSensorListener);
-				
+				if(magnetoSensorListener!=null)
+					controller.unregisterMagnetometerService(magnetoSensorListener);
 			}
 			
 			//fileWirter.dataToWrite();
