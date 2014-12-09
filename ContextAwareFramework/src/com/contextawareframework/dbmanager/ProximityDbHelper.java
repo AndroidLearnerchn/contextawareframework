@@ -94,7 +94,7 @@ public class  ProximityDbHelper{
 	/**
 	 * Method to create insert a row of data into the database
 	 */
-	public Proximity createProximiytRowData(long timestamp,float near, float far)
+	public Proximity createProximiytRowData(long timestamp,int near, int far)
 	{
 		ContentValues values = new ContentValues();
 		Proximity newRow = null;
@@ -180,8 +180,8 @@ public class  ProximityDbHelper{
 		try
 		{
 			proximityRow.setTimestamp(cursor.getLong(0));
-			proximityRow.setNear(cursor.getFloat(1));
-			proximityRow.setFar(cursor.getFloat(2));
+			proximityRow.setNear(cursor.getInt(1));
+			proximityRow.setFar(cursor.getInt(2));
 		}
 		catch(Exception e)
 		{

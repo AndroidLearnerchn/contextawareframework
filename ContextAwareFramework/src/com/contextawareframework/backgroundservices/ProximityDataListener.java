@@ -137,11 +137,18 @@ public class ProximityDataListener extends CAFService {
 				if(mProximity!=null)
 				{
 					mSensorManager.registerListener(listener, mProximity,sampleRate);
+					
+					//mProximity.getType();
+					//String type = mProximity.getType();
+					//Log.d(TAG,"Max : "+max);
 					Log.d(TAG,"Proximity Sensor Found");
+					//Toast.makeText(mContext, "Proximity sensor Available", Toast.LENGTH_SHORT).show();
 				}
 				else
 				{
+					Toast.makeText(mContext, "Proximity sensor Available", Toast.LENGTH_SHORT).show();
 					Log.d(TAG,"Proximity Sensor not found");
+					
 				}
 				
 			}
@@ -151,7 +158,15 @@ public class ProximityDataListener extends CAFService {
 			}
 		}
 	}
-
+	/*
+	 * Get the range of proximity sensor
+	 */
+	public float getMaxValue()
+	{
+		float max = mProximity.getMaximumRange();
+		return max;
+		
+	}
 	/**
 	 * Method to disable Proximity Sensor in Android
 	 */
