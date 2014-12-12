@@ -18,7 +18,7 @@ package com.contextawareframework.os;
  * @File        CAFPowerManager
  * @Created:    23.07.2014
  * @author:     Divya
- * Last Change: 15.10.2014 by Prasenjit
+ * Last Change: 14.11.2014 by Prasenjit
  */
 
 
