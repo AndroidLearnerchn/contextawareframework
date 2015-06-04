@@ -63,7 +63,7 @@ public class UploadToServer {
     	  
     	  //String fileName = uploadFilePath + "" + uploadFileName;
     	  String fileName = sourceFileUri;
-    	  ipaddresswithport = "10.184.39.236:8090";
+    	  ipaddresswithport = "IPAddress:8090";
     	  upLoadServerUri = "http://"+ipaddresswithport+"/UploadFile/UploadServlet"; // Modification needed here as user may use his / her defined IP Appdress to upload data 
           HttpURLConnection conn = null;
           DataOutputStream dos = null;  
